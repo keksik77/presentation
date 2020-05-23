@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>React Native</h1>
+					<img src="./img/react.png" style="width: 300px">
+				</section>
+				<section>
+					<h2>What it is?</h2>
+					<ul>
+						<li>This is a framework for developing cross-platform applications using js and React</li>
+						<li>Created by Facebook</li>
+						<li>Appeared at the beginning of the 2015 year</li>
+						<li>React based</li>
+						<li>Under the hood does not use webView/UIWebView and HTML technology(Dom)</li>
+						<li>Uses js API on top of native components</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Inside look</h2>
+					<ul>
+						<li>No HTML, as a replacement - components of the JSX platform, which we will discuss further</li>
+						<li>No CSS styles, replacement - CSS-like polyphiles</li>
+						<li>No DOM API</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Architecture React Native</h2>
+						<ul>
+							<li>The main stream - handles the display of user interface elements and user gestures.</li>
+							<li>JavaScript stream - it executes JavaScript code in a separate engine, determines HOW the application works.</li>
+						</ul>
+					</section>
+					<section>
+							<p>For communication between the two streams meets the so-called bridge - a core React Native.</p>
+							<img src="./img/bridge.png" style="width: 550px;">
+					</section>
+				</section>
+				<section>
+					<section>
+					<h2>To start</h2>
+					<ul>
+						<li>Expo</li>
+						<li>React Native CLI</li>
+					</ul>
+					</section>
+					<section>
+						<h2>Expo</h2>
+						<p>Expo - a set of tools, libraries and services that allow you to quickly start.</p>
+						<ul>
+							<li>No complicated settings required</li>
+							<li>Does not require android studio/XCode</li>
+							<li>If we want to share the App, we do not need the .apk or .ipa file</li>
+							<li>You and other people can view the application while working on it</li>
+						</ul>
+					</section>
+					<section>
+						<h2>React native CLI</h2>
+						<ul>
+							<li>Long installation and setup( need Android studio/XCode)</li>
+							<li>You can add native modules</li>
+							<li>Windows / Linux => Android<br>MacOS => IOS</li>
+							<li>application weight is much less than Expo</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Expo vs CLI</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>CLI</th>
+									<th>Expo</th>
+								</tr>
+							</thead>
+							<tbody style="font-size: 40px;">
+								<tr>
+									<td>You can use your own native modules</td>
+									<td>+</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Hello World Application Weight</td>
+									<td>5mb</td>
+									<td>25mb</td>
+								</tr>
+								<tr>
+									<td>Required Android studio/XCode</td>
+									<td>+</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Fonts need to be imported manually</td>
+									<td>+</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>If you want to share the App, you need an apk/ipa file</td>
+									<td>+</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>You and other people can open a project while working on it</td>
+									<td>-</td>
+									<td>+</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h2>What do we have?</h2>
+					<p>
+						As said earlier, there are no HTML elements, but there are components:
+					</p>
+					<ul>
+						<li>Cross-platform (Text View Image ...)</li>
+						<li>Platform-oriented (DatePickerAndroid, / DatePickerIos ...)</li>
+					</ul>
+					</section>
+					<section>
+						<h2>Transition from web</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>React</th>
+									<th>React Native</th>
+								</tr>
+							</thead>
+							<tbody style="font-size: 40px;">
+								<tr>
+									<td>div</td>
+									<td>View</td>
+								</tr>
+								<tr>
+									<td>span</td>
+									<td>Text</td>
+								</tr>
+								<tr>
+									<td>li & ul</td>
+									<td>FlatList</td>
+								</tr>
+								<tr>
+									<td>img</td>
+									<td>Image</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section data-auto-animate>
+					<section><h2 data-id="code-title">Hello world</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						import React, { Component } from 'react';
+						import {Text, View, StyleSheet} from 'react-native';
+
+						export default class App extends Component {
+						  render() {
+						    return (
+							  &lt;View style={style.container}&gt;
+							    &lt;Text style={styles.welcome}&gt;Hello world!!!&lt;/Text&gt;
+							  &lt;/View&gt;
+						    );
+						  }
+						}
+					</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Styles</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const styles = StyleSheet.create({
+								container: {
+									flex: 1,
+									justifyContent: 'center',
+									alignItems: 'center',
+								},
+								welcome: {
+									fontSize: 20,
+									textAlign: 'center',
+									color: 'red',
+								}
+							})
+						</code></pre>
+					</section>
+					<section>
+						<img src="./img/hello world.png">
+					</section>
+				</section>
+				
+				
+				<section>
+					<section>
+					<h2>What about cross-platform?</h2>
+					<p>There are 2 ways to split code across platforms:</p>
+					<ul>
+						<li>Using the Platform Module</li>
+						<li>Using platform-specific file extension</li>
+					</ul>
+					</section>
+					<section>
+						<h2>Platform.OS</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							import {Platform, StyleSheet} from 'react-native';
+
+							const styles = StyleSheet.create({
+								height: Platform.OS === 'ios' ? 200 : 100,
+							});
+						</code></pre>
+					</section>
+					<section>
+						<h2>Platform.select</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							import {Platform, StyleSheet} from 'react-native';
+
+							const Component = Platform.select({
+							  ios: () => require('ComponentIOS'),
+							  android: () => require('ComponentAndroid'),
+							})();
+
+							&lt;Component /&gt;;
+
+							const styles = StyleSheet.create({
+							  flex: 1,
+							  ...Platform.select({
+							    ios: {
+							      backgroundColor: 'red',
+								},
+							    android: {
+								  backgroundColor: 'blue',
+							    },
+							  }),
+							});
+						</code></pre>
+					</section>
+					<section>
+						<h3>Platform-specific file extension</h3>
+						<p>BigButton.ios.js  or BigButton.android.js</p>
+						<p>import BigButton from './BigButton'</p>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h2>Navigation</h2>
+					<p>React Navigation</p>
+					<ul>
+						<li>cross-platform</li>
+						<li>native UI for each platform, you don’t have to worry about smooth transitions, etc.</li>
+						<li>. basic types of transitions:<br>
+							/ createStackNavigator<br>
+							/ createSwitchNavigator<br>
+							/ createDrawerNavigator<br>
+							/ createBottomTabNavigator ...</li>
+					</ul>
+					</section>
+					<section>
+						<h3>React Navigation example</h3>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const HomeStack = createStackNavigator({
+								Home: {screen: HomeScreen },
+								Details: { screen: DetailsScreen },
+							});
+							const SettingsScreen = createStackNavigator({
+								Settings: { screen: SettingsScreen },
+								Details: { screen: DetailsScreen },
+							});
+						</code></pre>
+					</section>
+					<section>
+						<h3>React Navigation example</h3>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class HomeScreen extends React.Component {
+							  static navigationOptions = {title: 'Home'};
+							  render() {
+							    return (
+							      &lt;View style={style.container}&gt;
+								    &lt;Text style={styles.welcome}&gt;Hello world!!!&lt;/Text&gt;
+								    &lt;Button title="Go to Details" onPress={() =&gt;
+								      this.props.navigation.navigate('Details')}/&gt;
+								  &lt;/View&gt;
+							    );
+							  }
+								...
+							}
+						</code></pre>
+					</section>
+				</section>
+
+				
+				<section>
+					<section>
+					<h2>Debugging the application</h2>
+					</section>
+					<section>
+						<p>Out of the box there is a debagger<br>
+							What can be taken from it?</p>
+						<ul>
+							<li>Dialog window</li>
+							<li>Life reloading</li>
+							<li>No need to wait for reassembly</li>
+							<li>Can view component properties</li>
+						</ul>
+					</section>
+					<section>
+						<a href="https://github.com/jhen0409/react-native-debugger">React native debugger</a>
+						<p>This is a standalone app for debugging React Native apps, everything is like in a browser and even more</p>
+						<img src="./img/debug.png">
+					</section>
+				</section>
+				<section>
+					<h2>Native modules</h2>
+					<p>How to connect ?</p>
+					<ul>
+						<li>Automatic linking<br>
+							react-native link &lt;library-with-native-dependencies&gt;<br>
+							<strong>but this does not always work</strong>
+						</li>
+						<li>Manual linking - takes longer<br>
+							The solution, as a rule, is an instruction, if there is no instruction, you need to think about whether this library is needed
+						</li>
+					</ul>
+					
+				</section>
+				<section style="text-align: left;">
+					<h3>Total</h3>
+					<ul>
+						<li>Cross-platform</li>
+						<li>Fast and cheap (front-end developers can easily start making applications knowing the react, you don't need the costs of objective c and java developers)</li>
+						<li>A wide choice of available components and solutions</li>
+						<li>Convenient transition from react to react-native (one ecosystem)</li>
+						<li>As a big disadvantage, poorly functioning automatic linking, you can not is okay library he wanted</li>
+					</ul>
+				</section>
+				<section>
+					<h1>End</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
