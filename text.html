@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Slide 1</h2>
+    <p>Hollo everyone, today we'll talk about such a thing as RN</p>
+    <hr>
+    <h2>Slide 2</h2>
+    <p>Let's see what it is, how it works and how to work with it, let's start</p>
+    <hr>
+    <h2>Slide 3</h2>
+    <p>So what it is, this is a framework for developing cross-platform application using js and React,
+        at the output we get a fully native application in Java and Objective C,
+         Released in 2015 by the Facebook Company,
+          React based, under the hood does not use webView and HTML technology,
+           used js Api on top of native components</p>
+    <hr>
+    <h2>Slide 5</h2>
+    <p>We said that the output is a fully native application, but how? 
+         RN uses 2 important streams. The main stream -It Handles the display of elements and user gestures.
+         JavaScript stream - it executes JavaScript code in a separate engine, defines, HOW the application works.</p>
+    <hr>
+    <h2>Slide 6 down</h2>
+    <p>But how do they cooperate?
+        On the slide you can see the outline.
+        For communication between the two streams is responsible Bridge - core React Native.
+        The bridge resolves requests and incoming data from two streams. This allows them to communicate asynchronously, as a result stable work.
+    </p>
+    <hr>
+    <h2>Slide 7</h2>
+    <p>Let's start creating our first application, Facebook offers us 2 methods to start development Expo and RN Cli</p>
+    <hr>
+    <h2>Slide 8 down</h2>
+    <p>Expo - a set of tools, libraries and services.
+         Download the expo-client application on your phone, connect from the PC to the same network and begin development.
+          The application is updated quickly anytime, for the all team</p>
+    <hr>
+    <h2>Slide 9 down</h2>
+    <p>If you have already developed mobile applications, you can use CLI. To start you need long customizable Xcode or Android studio but unlike expo, you can add native modules,
+         It is important that you can develop android applications only on Windows or Linux, and IOS applications only on MAC OS</p>
+    <hr>
+    <h2>Slide 10 down</h2>
+    <p> At the slide you can see advantages and disadvantages of two methods.
+         Pay attention to the paving weight of the expo 25 megabytes, СLI 5, unlike CLI, with expo you and other people can open a project while working on it,
+          and unlike expo , with CLI you can add native modules.
+           If you think about a real project, choose CLI, because adding native modules and the weight of the application plays a big role,
+            if you just need to try what RN is, choose expo</p>
+    <hr>
+    <h2>Slide 11</h2>
+    <p>What do we have? As said before, there are no HTML elements, but there are 2 types of components, cross-platform (such as Text, View) and platform-oriented(such as DatePickerAndroid DatePickerIos)</p>
+    <hr>
+    <h2>Slide 12 down</h2>
+    <p>On the slide we see an easy transition from the web, div it is View, span it is Text, img it is Image</p>
+    <hr>
+    <h2>Slide 13</h2>
+    <p>Here is our first app. We have a component class from the box, which has a "render" method,
+         with its help the Visual part is drawn, View is a block, Text is a line element, 
+         each element contains a style attribute, which is responsible for StyleSheet object, What kind of object</p>
+    <hr>
+    <h2>Slide 14 down</h2>
+    <p>This is an object created from the StyleSheet module using the create method, a generally simplified css model. The name of the objects is just like classes, and the fields of objects that use camelcase are styles</p>
+    <hr>
+    <h2>Slide 15 down</h2>
+    <p>The application will look the same on all platforms</p>
+    <hr>
+    <h2>Slide 16</h2>
+    <p>There are 2 ways to split code across platforms using the Platform Module, using platform specific file extension</p>
+    <hr>
+    <h2>Slide 17 down</h2>
+    <p>Using the Platform module and its OS method, depending on the platform, select the height</p>
+    <hr>
+    <h2>Slide 18 down</h2>
+    <p>second image For large changes, the select method, which, according to the platform key, returns a set of some properties
+        first image Using the select method you can make cross-platform components.
+    </p>
+    <hr>
+    <h2>Slide 19 down</h2>
+    <p>We share all of the code on the 2 files with different extensions, and importing,and RN will select the desired file</p>
+    <hr>
+    <h2>Slide 20</h2>
+    <p>What about navigation, out of the box we have React-navigation, This solution cross-platform, has 
+         Native UI for each platform, you don’t have to worry about smooth transitions... and basic types of transitions like createStackNavigator</p>
+    <hr>
+    <h2>Slide 21 down</h2>
+    <p>There is a creacteAppContainer which contains 2 stacks, each has its own set of screens</p>
+    <hr>
+    <h2>Slide 22 down</h2>
+    <p>These 2 screens, everything is simple, the same Hello World</p>
+    <hr>
+    <h2>What about native modules?</h2>
+    <p>there are two ways, Automatic linking, just writing a command in the console, but it doesn’t always work,
+         the second way is manual linking, usually there are instructions, if not, you need to figure it out yourself</p>
+    <hr>
+    <h2>Slide 26</h2>
+    <p>What in total? Cross platform, fast and cheep, front-end developers can easily start making applications knowing the react,
+         you don't need the costs of objective C and java developers, A wide choice of available components and solutions, Convenient transition from react to react-native (one ecosystem)</p>
+    <hr>
+</body>
+</html>
